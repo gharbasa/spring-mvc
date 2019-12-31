@@ -31,8 +31,8 @@ dependencies {
     // This dependency is found on compile classpath of this component and consumers.
     implementation 'com.google.guava:guava:26.0-jre'
     
-    compile("org.springframework:spring-context:4.0.0.RELEASE")
-    compile("org.springframework:spring-webmvc:4.0.0.RELEASE")
+    compile("org.springframework:spring-context:4.3.0.RELEASE")
+    compile("org.springframework:spring-webmvc:4.3.0.RELEASE")
     compile("org.aspectj:aspectjrt:1.7.4")
     
     providedCompile("javax.inject:javax.inject:1")
@@ -43,6 +43,7 @@ dependencies {
     compile("org.slf4j:jcl-over-slf4j:1.7.5")
     compile("org.slf4j:slf4j-log4j12:1.7.5")
     compile("log4j:log4j:1.2.15")
+    compile group: 'org.apache.logging.log4j', name: 'log4j', version: '2.8.2'
     
     // Use TestNG framework, also requires calling test.useTestNG() below
     testImplementation 'org.testng:testng:6.14.3'

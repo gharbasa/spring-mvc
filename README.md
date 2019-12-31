@@ -7,5 +7,7 @@
 ./gradlew clean build war
 
 ./gradlew appRun
-
+    Application logs are written in ~/logs/spring-mvc.log
+    
 http://localhost:8080/spring-mvc/student
+
