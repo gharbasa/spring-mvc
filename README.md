@@ -4,7 +4,7 @@
 
 <br>
 
-./gradlew clean build war
+./gradlew clean eclipse build
 
 ./gradlew appRun
 
