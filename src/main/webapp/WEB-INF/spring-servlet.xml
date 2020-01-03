@@ -17,4 +17,5 @@
     <bean id = "customEventHandler" class = "spring.mvc.event.CustomEventHandler"/>
     <bean id = "customEventPublisher" class = "spring.mvc.event.CustomEventPublisher"/>
 
+    
 </beans>

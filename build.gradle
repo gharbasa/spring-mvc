@@ -33,6 +33,13 @@ dependencies {
     
     compile("org.springframework:spring-context:4.3.0.RELEASE")
     compile("org.springframework:spring-webmvc:4.3.0.RELEASE")
+    compile("org.springframework:spring-webmvc:4.3.0.RELEASE")
+    //https://stackoverflow.com/questions/40626103/what-is-the-compatible-version-of-spring-security-with-spring-4-3-0-release
+    compile group: 'org.springframework.security', name: 'spring-security-core', version: '4.2.13.RELEASE'
+    compile group: 'org.springframework.security', name: 'spring-security-web', version: '4.2.13.RELEASE'
+    compile group: 'org.springframework.security', name: 'spring-security-config', version: '4.2.13.RELEASE'
+    //compile group: 'org.springframework.security', name: 'spring-security-taglibs', version: '4.2.13.RELEASE'
+    
     compile("org.aspectj:aspectjrt:1.7.4")
     
     providedCompile("javax.inject:javax.inject:1")

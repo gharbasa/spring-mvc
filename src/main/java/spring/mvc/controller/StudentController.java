@@ -13,14 +13,18 @@ import org.springframework.web.servlet.ModelAndView;
 import spring.mvc.event.CustomEventPublisher;
 import spring.mvc.model.EventBean;
 import spring.mvc.model.Student;
+import spring.mvc.service.IAccountTokenService;
 
 @Controller
 public class StudentController {
    
-	static Log log = LogFactory.getLog(StudentController.class.getName());
+	private static Log log = LogFactory.getLog(StudentController.class.getName());
 	
 	@Autowired
 	CustomEventPublisher customEventPublisher;
+	
+	@Autowired
+	IAccountTokenService accountTokenService;
 	
 	@RequestMapping(value = "/student", method = RequestMethod.GET)
 	public ModelAndView student() {
@@ -38,6 +42,8 @@ public class StudentController {
 		EventBean eventSource = new EventBean();
 		eventSource.setEvetName("Testing Spring-mvc");
 		customEventPublisher.publish(eventSource);
+		
+		log.debug("Call from the serivce API..." + accountTokenService.generateToken(student.getName()));
 		
 		return "result";
 	}
