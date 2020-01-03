@@ -29,7 +29,7 @@ repositories {
 
 dependencies {
     // This dependency is found on compile classpath of this component and consumers.
-    implementation 'com.google.guava:guava:26.0-jre'
+    //implementation 'com.google.guava:guava:26.0-jre'
     
     compile("org.springframework:spring-context:4.3.0.RELEASE")
     compile("org.springframework:spring-webmvc:4.3.0.RELEASE")
