@@ -42,7 +42,7 @@ dependencies {
     
     //compile("org.aspectj:aspectjrt:1.7.4")
     
-    providedCompile("javax.inject:javax.inject:1")
+    //providedCompile("javax.inject:javax.inject:1")
     providedCompile("javax.servlet:servlet-api:2.5")
     //compile("javax.servlet:jstl:2.5")
     //compile("javax.servlet.jsp:jsp-api:1.2")    
