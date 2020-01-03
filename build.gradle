@@ -40,7 +40,7 @@ dependencies {
     //compile group: 'org.springframework.security', name: 'spring-security-config', version: '4.2.13.RELEASE'
     //compile group: 'org.springframework.security', name: 'spring-security-taglibs', version: '4.2.13.RELEASE'
     
-    compile("org.aspectj:aspectjrt:1.7.4")
+    //compile("org.aspectj:aspectjrt:1.7.4")
     
     providedCompile("javax.inject:javax.inject:1")
     providedCompile("javax.servlet:servlet-api:2.5")
