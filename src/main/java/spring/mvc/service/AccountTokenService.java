@@ -1,14 +1,14 @@
 package spring.mvc.service;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
 @Service
 public class AccountTokenService implements IAccountTokenService {
-	private static Log log = LogFactory.getLog(AccountTokenService.class.getName());
+	private static Logger log = LoggerFactory.getLogger(AccountTokenService.class);
 	//@Autowired
 	//BCrypt bCrypt;
 	//BCryptPasswordEncoder bCryptPasswordEncoder;

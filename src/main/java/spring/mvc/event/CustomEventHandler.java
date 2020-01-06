@@ -1,12 +1,12 @@
 package spring.mvc.event;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationListener;
 
 public class CustomEventHandler implements ApplicationListener<CustomEvent> {
 	
-	static Log log = LogFactory.getLog(CustomEventHandler.class.getName());
+	private static Logger log = LoggerFactory.getLogger(CustomEventHandler.class);
 	
 	public void onApplicationEvent(CustomEvent event) {
      	log.info("CustomEvent event handler..." + event.getSource().getEvetName());
