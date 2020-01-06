@@ -31,12 +31,12 @@ dependencies {
     // This dependency is found on compile classpath of this component and consumers.
     //implementation 'com.google.guava:guava:26.0-jre'
     
-    compile("org.springframework:spring-context:4.3.0.RELEASE")
-    compile("org.springframework:spring-webmvc:4.3.0.RELEASE")
-    compile("org.springframework:spring-webmvc:4.3.0.RELEASE")
+    compile("org.springframework:spring-context:5.0.0.RELEASE")
+    compile("org.springframework:spring-webmvc:5.0.0.RELEASE")
+    compile("org.springframework:spring-webmvc:5.0.0.RELEASE")
     //https://stackoverflow.com/questions/40626103/what-is-the-compatible-version-of-spring-security-with-spring-4-3-0-release
-    compile group: 'org.springframework.security', name: 'spring-security-core', version: '4.2.13.RELEASE'
-    compile group: 'org.springframework.security', name: 'spring-security-web', version: '4.2.13.RELEASE'
+    compile group: 'org.springframework.security', name: 'spring-security-core', version: '5.0.0.RELEASE'
+    compile group: 'org.springframework.security', name: 'spring-security-web', version: '5.0.0.RELEASE'
     //compile group: 'org.springframework.security', name: 'spring-security-config', version: '4.2.13.RELEASE'
     //compile group: 'org.springframework.security', name: 'spring-security-taglibs', version: '4.2.13.RELEASE'
     
