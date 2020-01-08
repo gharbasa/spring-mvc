@@ -32,18 +32,24 @@ dependencies {
     //implementation 'com.google.guava:guava:26.0-jre'
     
     compile("org.springframework:spring-context:5.2.1.RELEASE")
+    //compile("org.springframework:spring-web:5.2.1.RELEASE")
     compile("org.springframework:spring-webmvc:5.2.1.RELEASE")
-    //compile("org.springframework:spring-webmvc:5.2.1.RELEASE")
+    compile("com.fasterxml.jackson.core:jackson-databind:2.10.1")
+    compile("com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.10.1")
+    
     //https://stackoverflow.com/questions/40626103/what-is-the-compatible-version-of-spring-security-with-spring-4-3-0-release
     compile group: 'org.springframework.security', name: 'spring-security-core', version: '5.2.1.RELEASE'
     compile group: 'org.springframework.security', name: 'spring-security-web', version: '5.2.1.RELEASE'
     //compile group: 'org.springframework.security', name: 'spring-security-config', version: '4.2.13.RELEASE'
     //compile group: 'org.springframework.security', name: 'spring-security-taglibs', version: '4.2.13.RELEASE'
     
+    //http://learningprogramming.net/java/spring-mvc/captcha-in-spring-mvc-framework/
+    //Own captcha implementation
+    
     //compile("org.aspectj:aspectjrt:1.7.4")
     
     //providedCompile("javax.inject:javax.inject:1")
-    providedCompile("javax.servlet:servlet-api:2.5")
+    providedCompile("javax.servlet:javax.servlet-api:3.0.1")
     //compile("javax.servlet:jstl:2.5")
     //compile("javax.servlet.jsp:jsp-api:1.2")    
     

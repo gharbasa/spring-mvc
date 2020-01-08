@@ -1,5 +1,7 @@
 package spring.mvc.service;
 
+import java.util.Random;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.crypto.bcrypt.BCrypt;
@@ -23,5 +25,12 @@ public class AccountTokenService implements IAccountTokenService {
 		//String token = bCryptPasswordEncoder.encode(account);
 		return token;
 	}
+	/**
+	public static void main(String[] str) {
+		Random randChars = new Random();
+		String sImageCode = (Long.toString(Math.abs(randChars.nextLong()), 36)).substring(0, 6);
+		System.out.println("Ramdon image code=" + sImageCode);
+	}
+	*/
 }
 

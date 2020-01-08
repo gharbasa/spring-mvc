@@ -16,6 +16,7 @@ import spring.mvc.model.Student;
 import spring.mvc.service.IAccountTokenService;
 
 @Controller
+@RequestMapping("web/student")
 public class StudentController {
    
 	private static Logger log = LoggerFactory.getLogger(StudentController.class);
@@ -26,13 +27,13 @@ public class StudentController {
 	@Autowired
 	IAccountTokenService accountTokenService;
 	
-	@RequestMapping(value = "/student", method = RequestMethod.GET)
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public ModelAndView student() {
 		log.debug("Serving blank Student view");
 		return new ModelAndView("student", "command", new Student());
 	}
    
-	@RequestMapping(value = "/addStudent", method = RequestMethod.POST)
+	@RequestMapping(value = "/", method = RequestMethod.POST)
 	public String addStudent(@ModelAttribute("SpringWeb")Student student, ModelMap model) {
 		log.debug("Serving addStudent view");
 		model.addAttribute("name", student.getName());
