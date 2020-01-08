@@ -25,3 +25,12 @@ Rest API:
     http://localhost:8080/spring-mvc/rest/student/all.xml
     
     
+Web Sphere 8.5 doesn't support providedCompile("javax.servlet:javax.servlet-api:3.0.1")
+    
+    It has to be providedCompile("javax.servlet:servlet-api:2.5")
+Where as Web Sphere 9.0 supports
+    
+    providedCompile("javax.servlet:javax.servlet-api:3.0.1")
+    
+    
+    
