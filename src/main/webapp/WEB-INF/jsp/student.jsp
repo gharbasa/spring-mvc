@@ -28,11 +28,16 @@
             </tr>
          </table>  
          
-         <botDetect:captcha id="exampleCaptcha" userInputID="captchaCode"/>
-
+         <botDetect:captcha imageWidth="150" imageHeight="50" id="exampleCaptcha" userInputID="captchaCode"/>
+        <br>
+        
 		<div class="validationDiv">
             <form:input path = "captchaCode" />
+            
 		</div>
+		<br>
+		<span class="incorrect">${student.human}</span>
+        <br>
         <input type = "submit" value = "Submit"/>
       </form:form>
    </body>
