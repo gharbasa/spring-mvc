@@ -13,6 +13,14 @@ public class Student {
 	private Integer id;
 
 	private String captchaCode;
+	private boolean human;
+	
+	public boolean isHuman() {
+		return human;
+	}
+	public void setHuman(boolean isHuman) {
+		this.human = isHuman;
+	}
 	
 	public void setAge(Integer age) {
 		this.age = age;

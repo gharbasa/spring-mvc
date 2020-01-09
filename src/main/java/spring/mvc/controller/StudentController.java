@@ -38,7 +38,7 @@ public class StudentController {
 	}
    
 	@RequestMapping(value = "/", method = RequestMethod.POST)
-	public String addStudent(@ModelAttribute("SpringWeb")Student student, ModelMap model
+	public ModelAndView addStudent(@ModelAttribute("student")Student student, ModelMap model
 			, HttpServletRequest request) {
 		log.debug("Serving addStudent view");
 		
@@ -56,7 +56,12 @@ public class StudentController {
 		customEventPublisher.publish(eventSource);
 		
 		log.debug("Call from the serivce API..." + accountTokenService.generateToken(student.getName()));
+		student.setHuman(isHuman);
 		
-		return "result";
+		if(!isHuman)
+			return new ModelAndView("student", "command", student);
+		
+		//return "result";
+		return new ModelAndView("result", "command", model);
 	}
 }
