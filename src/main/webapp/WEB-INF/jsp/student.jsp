@@ -1,4 +1,5 @@
 <%@taglib uri = "http://www.springframework.org/tags/form" prefix = "form"%>
+<%@taglib prefix="botDetect" uri="https://captcha.com/java/jsp"%>
 <html>
    <head>
       <title>Spring MVC Form Handling</title>
@@ -22,10 +23,17 @@
             </tr>
             <tr>
                <td colspan = "2">
-                  <input type = "submit" value = "Submit"/>
+                  
                </td>
             </tr>
          </table>  
+         
+         <botDetect:captcha id="exampleCaptcha" userInputID="captchaCode"/>
+
+		<div class="validationDiv">
+            <form:input path = "captchaCode" />
+		</div>
+        <input type = "submit" value = "Submit"/>
       </form:form>
    </body>
    
