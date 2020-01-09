@@ -45,6 +45,9 @@ dependencies {
     
     //http://learningprogramming.net/java/spring-mvc/captcha-in-spring-mvc-framework/
     //Own captcha implementation
+    implementation files('dep-libs/botdetect-4.0.beta3.7.jar')
+    implementation files('dep-libs/botdetect-jsp20-4.0.beta3.7.jar')
+    implementation files('dep-libs/botdetect-servlet-4.0.beta3.7.jar')
     
     //compile("org.aspectj:aspectjrt:1.7.4")
     

@@ -1,5 +1,7 @@
 package spring.mvc.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +11,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.captcha.botdetect.web.servlet.Captcha;
 
 import spring.mvc.event.CustomEventPublisher;
 import spring.mvc.model.EventBean;
@@ -34,8 +38,15 @@ public class StudentController {
 	}
    
 	@RequestMapping(value = "/", method = RequestMethod.POST)
-	public String addStudent(@ModelAttribute("SpringWeb")Student student, ModelMap model) {
+	public String addStudent(@ModelAttribute("SpringWeb")Student student, ModelMap model
+			, HttpServletRequest request) {
 		log.debug("Serving addStudent view");
+		
+		Captcha captcha = Captcha.load(request, "exampleCaptcha");
+	    boolean isHuman = captcha.validate(student.getCaptchaCode());
+	    
+	    log.debug("Serving addStudent view isHuman=" + isHuman);
+	    
 		model.addAttribute("name", student.getName());
 		model.addAttribute("age", student.getAge());
 		model.addAttribute("id", student.getId());

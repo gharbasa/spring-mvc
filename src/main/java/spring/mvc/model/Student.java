@@ -12,6 +12,8 @@ public class Student {
 	//@XmlElement
 	private Integer id;
 
+	private String captchaCode;
+	
 	public void setAge(Integer age) {
 		this.age = age;
 	}
@@ -32,4 +34,12 @@ public class Student {
 	public Integer getId() {
 		return id;
 	}
+	
+	public String getCaptchaCode() {
+		return captchaCode;
+	}
+	public void setCaptchaCode(String captchaCode) {
+		this.captchaCode = captchaCode;
+	}
+	
 }
