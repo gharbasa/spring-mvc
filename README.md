@@ -26,8 +26,5 @@ Rest API:
     
     
 Supports WebSphere 9.0, but not 8.5
-    
-    providedCompile("javax.servlet:javax.servlet-api:3.0.1")
-    
-    
+
 Captcha: https://captcha.com/doc/java/examples/springmvc-basic-captcha-example.html
