@@ -25,6 +25,11 @@ Rest API:
     http://localhost:8080/spring-mvc/rest/student/all.xml
     
     
-Supports WebSphere 9.0, but not 8.5
+Only WAS 9.0 supports Spring 5.2.1 but not Web Sphere 8.5
+
+    It has to be <= 5.0.0
+    
 
 Captcha: https://captcha.com/doc/java/examples/springmvc-basic-captcha-example.html
+
+http://javainsimpleway.com/spring-mvc-hibernate-with-tomcat-jndi/
