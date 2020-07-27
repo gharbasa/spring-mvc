@@ -31,16 +31,16 @@ dependencies {
     // This dependency is found on compile classpath of this component and consumers.
     //implementation 'com.google.guava:guava:26.0-jre'
     
-    compile("org.springframework:spring-context:5.2.1.RELEASE")
+    compile("org.springframework:spring-context:5.0.0.RELEASE")
     //compile("org.springframework:spring-web:5.2.1.RELEASE")
-    compile("org.springframework:spring-webmvc:5.2.1.RELEASE")
+    compile("org.springframework:spring-webmvc:5.0.0.RELEASE")
     compile("com.fasterxml.jackson.core:jackson-databind:2.10.1")
     compile("com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.10.1")
     
     //https://stackoverflow.com/questions/40626103/what-is-the-compatible-version-of-spring-security-with-spring-4-3-0-release
-    compile group: 'org.springframework.security', name: 'spring-security-core', version: '5.2.1.RELEASE'
-    compile group: 'org.springframework.security', name: 'spring-security-web', version: '5.2.1.RELEASE'
-    //compile group: 'org.springframework.security', name: 'spring-security-config', version: '4.2.13.RELEASE'
+    compile group: 'org.springframework.security', name: 'spring-security-core', version: '5.0.0.RELEASE'
+    compile group: 'org.springframework.security', name: 'spring-security-web', version: '5.0.0.RELEASE'
+    compile group: 'org.springframework.security', name: 'spring-security-config', version: '5.0.6.RELEASE'
     //compile group: 'org.springframework.security', name: 'spring-security-taglibs', version: '4.2.13.RELEASE'
     
     //http://learningprogramming.net/java/spring-mvc/captcha-in-spring-mvc-framework/
@@ -48,12 +48,15 @@ dependencies {
     implementation files('dep-libs/botdetect-4.0.beta3.7.jar')
     implementation files('dep-libs/botdetect-jsp20-4.0.beta3.7.jar')
     implementation files('dep-libs/botdetect-servlet-4.0.beta3.7.jar')
+    compile group: 'commons-codec', name: 'commons-codec', version: '1.10'
     
     //compile("org.aspectj:aspectjrt:1.7.4")
     
     //providedCompile("javax.inject:javax.inject:1")
     providedCompile("javax.servlet:javax.servlet-api:3.0.1")
-    //compile("javax.servlet:jstl:2.5")
+    compile group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
+    compile("javax.servlet:jstl:1.2")
+    compile("taglibs:standard:1.1.2")
     //compile("javax.servlet.jsp:jsp-api:1.2")    
     
     //compile("org.slf4j:slf4j-api:1.7.5")
@@ -66,12 +69,17 @@ dependencies {
     //compile group: 'org.slf4j', name: 'log4j-over-slf4j', version: '1.7.21+'
     //compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.21+'
     //compile group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: '2.8.2'
-    compile group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: '2.8.2+'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: '2.8.2'
     compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.8.2'
     
-    // Use TestNG framework, also requires calling test.useTestNG() below
-    testImplementation 'org.testng:testng:6.14.3'
+    compile group:'org.hibernate', name:'hibernate-core', version: '5.0.1.Final'
+    compile group: 'org.springframework', name: 'spring-tx', version: '5.0.0.RELEASE'
+    compile group: 'org.springframework', name: 'spring-orm', version: '5.0.8.RELEASE'
+    compile group: 'org.postgresql', name: 'postgresql', version: '42.1.4'
     
+    // Use TestNG framework, also requires calling test.useTestNG() below
+    //testImplementation 'org.testng:testng:6.14.3'
+    testImplementation 'junit:junit:4.12'
 }
 
 // Define the main class for the application
