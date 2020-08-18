@@ -47,8 +47,8 @@ public class DocumentController {
     
     @RequestMapping(value="/fts-all/{searchString}", method = RequestMethod.GET) //,, produces="application/json" 
     public @ResponseBody List<BaseDocument> ftsSearchAll(@PathVariable("searchString") String searchString) {//REST Endpoint.
-    	log.debug("searchString native sql call ---> {}", searchString);
-    	List<BaseDocument> list = documentService.searchNativeAll(searchString);
+    	log.debug("searchString 123 fts-all sql call ---> {}", searchString);
+    	List<BaseDocument> list = documentService.ftsSearchAll(searchString);
     	log.debug("native sql call list size ---> {}", list.size());
     	return list;
     }
