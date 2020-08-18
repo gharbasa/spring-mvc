@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity(name = "basedocument")
 @Inheritance(strategy = InheritanceType.JOINED)
 @DiscriminatorColumn(name="docType", 
@@ -23,6 +25,12 @@ public class BaseDocument {
     
 	@Column(name = "searchJson")
 	private String searchJson;
+	
+	/**
+	@JsonIgnore
+	@Column(name = "searchableidx")
+	private String searchableidx;
+	*/
 	
 	@Column
 	private String docType;
@@ -61,5 +69,14 @@ public class BaseDocument {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	
+	/**
+	public String getSearchableidx() {
+		return searchableidx;
+	}
+
+	public void setSearchableidx(String searchableidx) {
+		this.searchableidx = searchableidx;
+	}*/
     
 }

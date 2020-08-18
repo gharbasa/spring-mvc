@@ -32,8 +32,9 @@ public class DocumentDao implements IDocumentDao<BaseDocument> {
 	public List<BaseDocument> ftsSearchAll(String pattern) {
 		List<BaseDocument> list = new ArrayList<BaseDocument>();
 		try (Session session = sessionFactory.openSession()) {
-			list = session.createQuery("from basedocument obj "
-					+ " where fts('pg_catalog.english', obj.searchJson, :pattern) = true")
+			list = session.createSQLQuery("select obj.duKey, obj.searchJson"
+					+ ", obj.docType, obj.description from {h-schema}basedocument obj"
+					+ " where obj.searchableidx @@ to_tsquery(:pattern)")
 						.setParameter("pattern", pattern).list();
 		}
 		
@@ -44,7 +45,9 @@ public class DocumentDao implements IDocumentDao<BaseDocument> {
 	public List<BaseDocument> searchNativeQuery(String pattern) {
 		List<BaseDocument> list = new ArrayList<BaseDocument>();
 		try (Session session = sessionFactory.openSession()) {
-			list = session.createSQLQuery("select * from {h-schema}basedocument where searchJson like :pattern")
+			list = session.createSQLQuery("select obj.duKey, obj.searchJson"
+					+ ", obj.docType, obj.description from {h-schema}basedocument obj"
+					+ " where searchJson like :pattern")
 					.setString("pattern", "%"+pattern.toUpperCase()+"%")
 					.list();
 		}
