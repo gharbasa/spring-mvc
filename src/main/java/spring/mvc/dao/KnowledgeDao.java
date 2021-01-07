@@ -55,7 +55,7 @@ public class KnowledgeDao {
 		Knowledge returnObj = null;
 		try (Session session = sessionFactory.openSession()) {
 			session.beginTransaction();
-			if(knowledgeParam.getId() != null) {
+			if(knowledgeParam.getId() != null && knowledgeParam.getId() > 0) {
 				Knowledge knowledgeDb = getById(knowledgeParam.getId());
 				if(knowledgeDb != null) {
 					log.debug("There is a Knowledge in DB by Id {}" , knowledgeParam.getId());
