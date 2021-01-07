@@ -34,7 +34,8 @@ public class DocumentDao implements IDocumentDao<BaseDocument> {
 		try (Session session = sessionFactory.openSession()) {
 			list = session.createSQLQuery("select obj.duKey, obj.searchJson"
 					+ ", obj.docType, obj.description from {h-schema}basedocument obj"
-					+ " where obj.searchableidx @@ to_tsquery(:pattern)")
+					+ " where obj.searchableidx @@ plainto_tsquery(:pattern)")
+					//+ " where obj.searchableidx @@ (:pattern)")
 						.setParameter("pattern", pattern).list();
 		}
 		

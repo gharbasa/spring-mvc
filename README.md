@@ -33,3 +33,23 @@ Only WAS 9.0 supports Spring 5.2.1 but not Web Sphere 8.5
 Captcha: https://captcha.com/doc/java/examples/springmvc-basic-captcha-example.html
 
 http://javainsimpleway.com/spring-mvc-hibernate-with-tomcat-jndi/
+
+
+
+#CREATE TRIGGER tsvectorupdate_knowledge BEFORE INSERT OR UPDATE
+#ON ubs.knowledge FOR EACH ROW EXECUTE FUNCTION
+#tsvector_update_trigger(searchindex, 'pg_catalog.english', ticket, notes, observations);
+
+ALTER TABLE ubs.knowledge
+    ADD COLUMN indexeddata tsvector
+    GENERATED ALWAYS AS (to_tsvector('english', 
+            coalesce(ticket, '') 
+            || ' ' || coalesce(notes, '') 
+            || ' ' || coalesce(observations, '')
+            || ' ' || coalesce(appid, ''))) 
+    STORED;
+
+CREATE INDEX textsearch_idx ON ubs.knowledge USING 
+    GIN (indexeddata);
+
+    
