@@ -43,6 +43,9 @@ public class Knowledge {
 	@Column
     private String clientid="";
     
+	@Column
+    private String developer="";
+	
 	@Column 
 	private Timestamp datereported = new Timestamp(System.currentTimeMillis());
 	
@@ -120,6 +123,14 @@ public class Knowledge {
 		this.clientid = clientid;
 	}
 
+	public String getDeveloper() {
+		return developer;
+	}
+
+	public void setDeveloper(String developer) {
+		this.developer = developer;
+	}
+	
 	public Timestamp getDatereported() {
 		return datereported;
 	}

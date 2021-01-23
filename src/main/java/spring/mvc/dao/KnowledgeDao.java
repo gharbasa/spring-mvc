@@ -25,7 +25,7 @@ public class KnowledgeDao {
 		List<Knowledge> list = new ArrayList<Knowledge>();
 		try (Session session = sessionFactory.openSession()) {
 			list = (List<Knowledge>)session.createSQLQuery("select id, ticket"
-					+ ", notes, observations, updatedat, createdat, appid, appversion, clientid, datereported from {h-schema}Knowledge"
+					+ ", notes, observations, updatedat, createdat, appid, appversion, clientid, datereported,developer from {h-schema}Knowledge"
 					+ " where indexeddata @@ to_tsquery('english', :pattern)"
 					+ " ORDER BY updatedat, createdat DESC")
 					//+ " where obj.searchableidx @@ (:pattern)")
@@ -66,6 +66,8 @@ public class KnowledgeDao {
 					knowledgeDb.setAppid(knowledgeParam.getAppid());
 					knowledgeDb.setAppversion(knowledgeParam.getAppversion());
 					knowledgeDb.setClientid(knowledgeParam.getClientid());
+					knowledgeDb.setDeveloper(knowledgeParam.getDeveloper());
+					knowledgeDb.setDatereported(knowledgeParam.getDatereported());
 					log.debug("Just before updating DB by Id {}" , knowledgeParam.getId());
 					session.saveOrUpdate(knowledgeDb);
 					returnObj = knowledgeDb;
