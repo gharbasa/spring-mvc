@@ -71,6 +71,7 @@ dependencies {
     //compile group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: '2.8.2'
     compile group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: '2.8.2'
     compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.8.2'
+    compile 'org.slf4j:slf4j-api:1.7.24'
     
     compile group:'org.hibernate', name:'hibernate-core', version: '5.0.1.Final'
     compile group: 'org.springframework', name: 'spring-tx', version: '5.0.0.RELEASE'
@@ -88,4 +89,8 @@ mainClassName = 'spring.mvc.App'
 test {
     // Use TestNG for unit tests
     useTestNG()
+}
+
+task prepareWrapper(type: Wrapper) {
+    gradleVersion = '6.8.1'
 }
